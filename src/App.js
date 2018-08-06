@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-
+import obj from './obj.png';
+import arr from './arr.png';
 
 class App extends Component {
   state = {
@@ -141,8 +141,14 @@ class App extends Component {
                   </div>
               )
           }
+
+          const objImage = selectedQuestion.category == 'objects' && <img  style={{margin: 10}} src={obj} />;
+          const arrImage = selectedQuestion.category == 'arrays' && <img style={{margin: 10}} src={arr} />;
+
           return (
               <div>
+                  {arrImage}
+                  {objImage}
                   <h3>Question: {selectedQuestion.question.text}</h3>
                   {backButton}
                   <div style={{display: 'flex', justifyContent: 'center', marginTop: 20}}>
@@ -229,5 +235,22 @@ class App extends Component {
     );
   }
 }
+const exampleArr = ['Andy', 'Renee', 'Tom', 'Lyndsey', 'Todd'];
+
+const exampleObj = {
+    userId: 1,
+    id: 1,
+    title: "sunt aut facere repellat provident",
+    body: "quia et suscipit suscipit recusandae",
+    user: {
+        type: {type_id: 7, title: 'view'},
+        name: 'Bob'
+    }
+};
+
 
 export default App;
+
+
+
+
